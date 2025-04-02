@@ -1,10 +1,503 @@
 <!DOCTYPE html>
-<html>
-   <head>
-      <title>Welcome to RS2Tek</title>
-   </head>
-   <body>
-      <h1>We are under CONSTRUCTION 🚧 🛠 </h1>
-      <p>Let us make AI simple for you ! ⭐️ </p>
-   </body>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RS2 Teknologies</title>
+    <!-- <link rel="stylesheet" href="styles.css" type="text/css"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarpanch:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+    <style>
+        /* Setting global style */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: 16px;
+            line-height: 1.5;
+            font-family: "Roboto", sans-serif;
+            color: #101577;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-color: #001857;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #001857;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #001857;
+            margin-bottom: 1rem;
+        }
+    </style>
+    <style>
+        /* header and navbar styles */
+        header {
+            background-color: #001857;
+            box-shadow: 0 0 0.5rem 0 #ffffff;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo img {
+            height: 3rem;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .menu-toggle .bar {
+            background-color: #fff;
+            height: .25rem;
+            width: 2rem;
+            margin: .25rem 0;
+        }
+
+        .nav-list {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-list li {
+            padding: 0.5rem;
+        }
+
+        .nav-list a {
+            display: block;
+            font-size: large;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            color: #fff;
+            padding: 0.5rem;
+            /* transition: background-color 0.3s; */
+        }
+
+        .nav-list a:hover {
+            background-color: #fff;
+            color: #001857;
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+
+            .nav-list {
+                display: none;
+                background-color: #001857;
+                flex-direction: column;
+                position: absolute;
+                top: 6rem;
+                right: 1rem;
+                width: 13rem;
+                padding: 1rem;
+                border-radius: 1rem;
+                box-shadow: 0 0.5rem 1rem 0 #ece9fd;
+            }
+
+            .nav-list.active {
+                display: flex;
+            }
+
+            .nav-list a:hover {
+                border-radius: 0.5rem;
+                background-color: #fff;
+                color: #001857;
+            }
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: flex-start;
+            flex-direction: column;
+            gap: 2rem;
+            padding: 3rem;
+        }
+
+        .panel {
+            border-radius: 1rem;
+            /* Cover the entire area */
+            background-size: cover;
+            /* Center the image */
+            background-position: center;
+            /* Prevent image repetition */
+            background-repeat: no-repeat;
+            box-shadow: 0 0.5rem 0.5rem -6px #ffffff;
+        }
+
+        #hero {
+            min-height: 60vh;
+            display: flex;
+            justify-content: flex-end;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.45),
+                    rgba(255, 255, 255, 0.09)),
+                url('images/inUse/home.jpg');
+            h1,h2{
+                color: white;
+            }
+            h1 {
+                font-size: 4rem;
+                font-weight: 900;
+            }
+        }
+
+        #applications {
+            min-height: 80vh;
+            display: flex;
+            grid-template-columns: auto auto auto;
+            align-items: flex-end;
+            text-align: center;
+            grid-gap: 1rem;
+            padding: 1rem;
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.1),
+                    rgba(255, 255, 255, 0.4)),
+                url('images/inUse/applications.jpg');
+        }
+
+        /* #applications .card p {
+            display: none;
+        } */
+
+        /* #applications .card:hover {
+            transform: scale(1.2);
+            z-index: 1;
+        }
+
+        #applications .card:hover ~ .card {
+            opacity: 0;
+            pointer-events: none;
+        } */
+
+        /* #applications .card {
+            transition: transform 0.3s ease;
+        } */
+        /* #applications .card:hover p {
+            display: block;
+        } */
+
+        #services {
+            min-height: 60vh;
+            display: flex;
+            /* justify-content: flex-end;
+            flex-direction: row; */
+            align-items: flex-end;
+            text-align: center;
+            gap: 1rem;
+            padding: 1rem;
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.5),
+                    rgba(255, 255, 255, 0.5)),
+                url('images/inUse/services.jpg');
+        }
+
+        .card {
+            background-color: #ffffff9c;
+            border-radius: 1rem;
+            padding: 1rem;
+            flex: 1;
+            box-shadow: inset 0 0 1rem 0rem #0008ff36;
+            img {
+                border-radius: 0.5rem 0.5rem 0 0;
+            }
+        }
+
+        .card:hover {
+            box-shadow: inset 0 0 1rem 0rem #0007ff80;
+        }
+
+        section {
+            border-radius: 1rem;
+            box-shadow: 0 0 1rem 0 #0101fb;
+            padding: 3rem;
+            background-color: white;
+        }
+
+        @media (max-width: 768px) {
+            main {
+                padding: 1rem;
+                gap: 1rem;
+            }
+
+            section {
+                padding: 1rem;
+            }
+        }
+
+        footer {
+            background-color: #001857;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 2rem;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 0 0.5rem 0 #ffffff;
+            /* position:relative;
+            bottom: 0;
+            width: 100%; */
+        }
+
+        footer p {
+            color: white;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .footer-content {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        .footer-content div {
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-content a {
+            text-decoration: none;
+        }
+
+        .footer-content a span {
+            color: #fff;
+        }
+
+        .social-icons,
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .social-icon {
+            height: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#"><img src="logo/logo.png" alt="RS2 Teknologies Logo"></a>
+            </div>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-list">
+                <li><a href="#">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <!-- <li><a href="#contact">Contact Us</a></li> -->
+            </ul>
+        </nav>
+    </header>
+    <main id="content">
+        <div class="panel" id="hero">
+            <h1>AI for Your Business Deserves a Smarter Overlord</h1>
+            <h2>Innovative AI Solutions for Your Business</h2>
+            <!-- <a href="#about">Learn More</a> -->
+        </div>
+        <div class="panel" id="applications">
+            <div class="card">
+                <img src="images/inUse/hlthdiag.jpg" alt="Healthcare dashboard" width="100%">
+                <h2>Healthcare Diagnosis</h2>
+                <p>Leveraging advanced AI algorithms to assist in early detection and accurate diagnosis of diseases,
+                    improving patient outcomes and reducing diagnostic errors.</p>
+            </div>
+            <div class="card">
+                <img src="images/inUse/intdet.jpg" alt="Red Binary Heart" width="100%">
+                <h2>Intrusion Detection</h2>
+                <p>Utilizing AI-driven threat detection and response systems to safeguard sensitive data and prevent
+                    cyberattacks, ensuring robust security for your digital assets.</p>
+            </div>
+            <div class="card">
+                <img src="images/inUse/drugPills.jpg" alt="Drug Discovery" width="100%">
+                <h2>Drug Discovery</h2>
+                <p>Harnessing the power of AI to accelerate drug discovery, identify potential compounds, and optimize
+                    drug development processes, reducing time and costs while improving efficacy.</p>
+            </div>
+            <div class="card">
+                <img src="images/inUse/predictions.jpg" alt="Blue Runes" width="100%">
+                <h2>Predictive Analysis</h2>
+                <p>Predictive analysis using AI enables businesses to forecast future trends, identify potential risks,
+                    and make data-driven decisions. By analyzing historical data and recognizing patterns, AI-powered
+                    predictive models provide valuable insights to optimize operations and improve strategic planning.
+                </p>
+            </div>
+            <!-- <div class="card">
+                <h2>Natural Language Processing</h2>
+                <p>Natural Language Processing (NLP) is a branch of AI that focuses on the interaction between computers
+                    and human language. It enables machines to understand, interpret, and generate human language,
+                    facilitating tasks such as sentiment analysis, chatbots, and language translation.</p>
+            </div> -->
+            <!-- <div class="card">
+                <h2>Computer Vision</h2>
+                <p>Computer Vision is a field of AI that enables machines to interpret and understand visual information from the world. It involves the use of algorithms and models to analyze images and videos, enabling applications such as facial recognition, object detection, and autonomous vehicles.</p>
+            </div>
+            <div class="card">
+                <h2>Robotics</h2>
+                <p>Robotics is a multidisciplinary field that combines AI, engineering, and computer science to design and build intelligent machines capable of performing tasks autonomously or semi-autonomously. AI enhances robotics by enabling perception, decision-making, and learning capabilities.</p>
+            </div> -->
+            <!-- <div class="card">
+                <h2>Automation</h2>
+                <p>AI in automation streamlines repetitive tasks, enhances efficiency, and reduces human error. By
+                    leveraging machine learning and intelligent algorithms, automation systems can adapt to changing
+                    conditions, optimize workflows, and deliver consistent results across various industries.</p>
+            </div> -->
+        </div>
+        <div class="panel" id="services">
+            <div class="card">
+                <h2>AI Integration</h2>
+                <p>Seamless integration of AI solutions into your existing systems.</p>
+            </div>
+            <div class="card">
+                <h2>Data Analytics</h2>
+                <p>Transforming raw data into actionable insights for informed decision-making.</p>
+            </div>
+            <div class="card">
+                <h2>AI Consulting</h2>
+                <p>Strategic guidance and expert advice on implementing AI technologies.</p>
+            </div>
+            <div class="card">
+                <h2>Machine Learning Development</h2>
+                <p>Custom machine learning models tailored to your specific needs.</p>
+            </div>
+        </div>
+        <section id="about">
+            <img src="images/inUse/home.jpg" width="100%" alt="neural networked brain">
+            <h1>About Us</h1>
+            <p>Welcome to RS2 Teknologies! We are a leading provider of innovative tech solutions, dedicated to helping
+                businesses achieve their goals through cutting-edge technology and exceptional service. Our team of
+                experts specializes in delivering tailored solutions that address the unique challenges faced by modern
+                organizations. Whether you are a startup looking to establish your digital presence or an established
+                enterprise aiming to optimize your operations, we have the expertise to help you succeed.</p>
+            <p>At RS2 Teknologies, we pride ourselves on our commitment to excellence and customer satisfaction. We
+                believe in building long-term partnerships with our clients by understanding their needs and delivering
+                results that exceed expectations. Our services range from web and mobile app development to cloud
+                solutions and IT consulting, ensuring that we can support your business at every stage of its growth.
+            </p>
+            <p>Innovation is at the heart of everything we do. We stay ahead of the curve by leveraging the latest
+                technologies and industry best practices to provide solutions that are not only effective but also
+                future-proof. Our mission is to empower businesses to thrive in an ever-evolving digital landscape by
+                providing them with the tools and support they need to succeed.</p>
+            <p>Join us on this journey of transformation and let RS2 Teknologies be your trusted partner in achieving
+                your business objectives. Together, we can create a brighter, more connected future.</p>
+        </section>
+
+        <!-- <section id="services">
+            <h1>Our Services</h1>
+            <ul>
+                <li>
+                    <strong>Web Development:</strong> Creating responsive and modern websites tailored to your needs.
+                    Our team ensures that your website is not only visually appealing but also optimized for
+                    performance, accessibility, and search engine rankings.
+                </li>
+                <li>
+                    <strong>Mobile App Development:</strong> Building user-friendly mobile applications for iOS and
+                    Android platforms. We focus on delivering seamless user experiences with intuitive designs and
+                    robust functionality to meet your business goals.
+                </li>
+                <li>
+                    <strong>Cloud Solutions:</strong> Offering scalable and secure cloud services to enhance your
+                    business operations. From cloud migration to infrastructure management, we provide end-to-end
+                    solutions that ensure reliability and efficiency.
+                </li>
+                <li>
+                    <strong>IT Consulting:</strong> Providing expert advice to optimize your IT infrastructure and
+                    strategy. Our consultants work closely with you to identify challenges, recommend solutions, and
+                    implement strategies that drive growth and innovation.
+                </li>
+            </ul>
+        </section> -->
+    </main>
+    <footer>
+        <div class="footer-content">
+            <div class="social-icons">
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                    <img src="icons/facebook.png" alt="Facebook" class="social-icon">
+                </a>
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                    <img src="icons/twitter.png" alt="Twitter" class="social-icon">
+                </a>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <img src="icons/instagram.png" alt="Instagram" class="social-icon">
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <img src="icons/linkedin.png" alt="LinkedIn" class="social-icon">
+                </a>
+                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                    <img src="icons/youtube.png" alt="YouTube" class="social-icon">
+                </a>
+            </div>
+            <div class="contact-info">
+                <a href="mailto:info@rs2tek.com" aria-label="Email">
+                    <!-- <span class="material-icons">email</span> -->
+                    <span>info@rs2tek.com</span>
+                </a>
+            </div>
+        </div>
+        <p>&copy; 2024 RS2 Teknologies. All rights reserved.</p>
+    </footer>
+</body>
+
+<!-- burger menu script -->
+<script>
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navList = document.querySelector('.nav-list');
+    const navItems = document.querySelectorAll('.nav-list li a');
+
+    mobileMenu.addEventListener('click', () => {
+        navList.classList.toggle('active');
+    });
+
+    navItems.forEach(item => {
+        item.addEventListener('click', () => {
+            navList.classList.remove('active');
+        });
+    });
+
+</script>
+
 </html>
