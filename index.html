@@ -155,7 +155,7 @@
         }
 
         #hero {
-            min-height: 60vh;
+            min-height: 80vh;
             display: flex;
             justify-content: flex-end;
             flex-direction: column;
@@ -164,19 +164,24 @@
             background-image:
                 linear-gradient(rgba(255, 255, 255, 0.45),
                     rgba(255, 255, 255, 0.09)),
-                url('images/inUse/home.jpg');
-            h1,h2{
+                url('images/inUse/hero.jpg');
+
+            h1,
+            h2 {
                 color: white;
             }
+
             h1 {
                 font-size: 4rem;
                 font-weight: 900;
             }
         }
+
         @media (max-width: 768px) {
             #hero {
                 min-height: 50vh;
                 padding: 1rem;
+
                 h1 {
                     font-size: 2.5rem;
                 }
@@ -198,10 +203,8 @@
         }
 
         #services {
-            min-height: 60vh;
+            min-height: 80vh;
             display: flex;
-            /* justify-content: flex-end;
-            flex-direction: row; */
             align-items: flex-end;
             text-align: center;
             gap: 1rem;
@@ -210,6 +213,19 @@
                 linear-gradient(rgba(255, 255, 255, 0.5),
                     rgba(255, 255, 255, 0.5)),
                 url('images/inUse/services.jpg');
+        }
+
+        #about {
+            min-height: 80vh;
+            display: flex;
+            align-items: flex-end;
+            text-align: center;
+            gap: 1rem;
+            padding: 1rem;
+            background-image:
+                /* linear-gradient(rgba(255, 255, 255, 0.1),
+                    rgba(255, 255, 255, 0.1)), */
+                url('images/inUse/about.jpg');
         }
 
         @media (max-width: 768px) {
@@ -224,13 +240,20 @@
                 align-items: center;
                 gap: 1rem;
             }
+            #about {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
         }
+
         .card {
             background-color: #ffffff9c;
             border-radius: 1rem;
             padding: 1rem;
             flex: 1;
             box-shadow: inset 0 0 1rem 0rem #0008ff36;
+
             img {
                 border-radius: 0.5rem 0.5rem 0 0;
             }
@@ -336,9 +359,29 @@
     </header>
     <main id="content">
         <div class="panel" id="hero">
-            <h1>AI for Your Business Deserves a Smarter Overlord</h1>
-            <h2>Innovative AI Solutions for Your Business</h2>
-            <!-- <a href="#about">Learn More</a> -->
+            <h1>Future-First Intelligence, Built for Visionary Leaders</h1>
+            <h2 id="cycling-statements"></h2>
+            <script>
+                const statements = [
+                    "Future-First Intelligence, Built for Visionary Leaders",
+                    "Empowering Tomorrow's Business with Smarter Intelligence Today",
+                    "Reinventing Intelligence for the Future of Your Business",
+                    "AI That Thinks Ahead. So Your Business Stays Ahead",
+                    "Your Business Deserves an AI That's More Brains, Less Buzz",
+                    "AI That Works for You, Not the Other Way Around"
+                ];
+
+                let currentIndex = 0;
+                const cyclingElement = document.getElementById('cycling-statements');
+
+                function cycleStatements() {
+                    cyclingElement.textContent = statements[currentIndex];
+                    currentIndex = (currentIndex + 1) % statements.length;
+                }
+
+                setInterval(cycleStatements, 5000); // Change statement every 3 seconds
+                cycleStatements(); // Initialize with the first statement
+            </script>
         </div>
         <div class="panel" id="applications">
             <div class="card">
@@ -406,26 +449,20 @@
                 <p>Custom machine learning models tailored to your specific needs.</p>
             </div>
         </div>
-        <section id="about">
-            <img src="images/inUse/home.jpg" width="100%" alt="neural networked brain">
-            <h1>About Us</h1>
-            <p>Welcome to RS2 Teknologies! We are a leading provider of innovative tech solutions, dedicated to helping
-                businesses achieve their goals through cutting-edge technology and exceptional service. Our team of
-                experts specializes in delivering tailored solutions that address the unique challenges faced by modern
-                organizations. Whether you are a startup looking to establish your digital presence or an established
-                enterprise aiming to optimize your operations, we have the expertise to help you succeed.</p>
-            <p>At RS2 Teknologies, we pride ourselves on our commitment to excellence and customer satisfaction. We
-                believe in building long-term partnerships with our clients by understanding their needs and delivering
-                results that exceed expectations. Our services range from web and mobile app development to cloud
-                solutions and IT consulting, ensuring that we can support your business at every stage of its growth.
-            </p>
-            <p>Innovation is at the heart of everything we do. We stay ahead of the curve by leveraging the latest
-                technologies and industry best practices to provide solutions that are not only effective but also
-                future-proof. Our mission is to empower businesses to thrive in an ever-evolving digital landscape by
-                providing them with the tools and support they need to succeed.</p>
-            <p>Join us on this journey of transformation and let RS2 Teknologies be your trusted partner in achieving
-                your business objectives. Together, we can create a brighter, more connected future.</p>
-        </section>
+        <div class="panel" id="about">
+            <!-- <img src="images/inUse/about.jpg" width="100%" alt="neural networked brain"> -->
+            <!-- <h1>About Us</h1> -->
+            <div class="card">
+                <h2>About Us</h2>
+                <p>
+                Welcome to RS2 Teknologies, where AI-driven innovation powers your success. We deliver tailored,
+                cutting-edge solutions to tackle modern business challenges, specializing in AI-enhanced web/mobile
+                apps, cloud systems, and IT consulting. Whether you're a startup or an enterprise, our expert team
+                leverages the latest AI technologies to optimize your operations and future-proof your growth. At RS2,
+                we're committed to exceeding expectations and building lasting partnerships. Let's transform your
+                business with intelligent, scalable solutions—together.</p>
+            </div>
+        </div>
     </main>
     <footer>
         <div class="footer-content">
