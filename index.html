@@ -188,27 +188,6 @@
                 url('images/inUse/applications.jpg');
         }
 
-        /* #applications .card p {
-            display: none;
-        } */
-
-        /* #applications .card:hover {
-            transform: scale(1.2);
-            z-index: 1;
-        }
-
-        #applications .card:hover ~ .card {
-            opacity: 0;
-            pointer-events: none;
-        } */
-
-        /* #applications .card {
-            transition: transform 0.3s ease;
-        } */
-        /* #applications .card:hover p {
-            display: block;
-        } */
-
         #services {
             min-height: 60vh;
             display: flex;
@@ -224,6 +203,19 @@
                 url('images/inUse/services.jpg');
         }
 
+        @media (max-width: 768px) {
+            #applications {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            #services {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+        }
         .card {
             background-color: #ffffff9c;
             border-radius: 1rem;
@@ -425,32 +417,6 @@
             <p>Join us on this journey of transformation and let RS2 Teknologies be your trusted partner in achieving
                 your business objectives. Together, we can create a brighter, more connected future.</p>
         </section>
-
-        <!-- <section id="services">
-            <h1>Our Services</h1>
-            <ul>
-                <li>
-                    <strong>Web Development:</strong> Creating responsive and modern websites tailored to your needs.
-                    Our team ensures that your website is not only visually appealing but also optimized for
-                    performance, accessibility, and search engine rankings.
-                </li>
-                <li>
-                    <strong>Mobile App Development:</strong> Building user-friendly mobile applications for iOS and
-                    Android platforms. We focus on delivering seamless user experiences with intuitive designs and
-                    robust functionality to meet your business goals.
-                </li>
-                <li>
-                    <strong>Cloud Solutions:</strong> Offering scalable and secure cloud services to enhance your
-                    business operations. From cloud migration to infrastructure management, we provide end-to-end
-                    solutions that ensure reliability and efficiency.
-                </li>
-                <li>
-                    <strong>IT Consulting:</strong> Providing expert advice to optimize your IT infrastructure and
-                    strategy. Our consultants work closely with you to identify challenges, recommend solutions, and
-                    implement strategies that drive growth and innovation.
-                </li>
-            </ul>
-        </section> -->
     </main>
     <footer>
         <div class="footer-content">
