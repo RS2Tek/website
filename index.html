@@ -6,12 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RS2 Teknologies</title>
     <!-- <link rel="stylesheet" href="styles.css" type="text/css"> -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sarpanch:wght@400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
+        rel="stylesheet"> -->
     <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
     <style>
+        /* Color Variables */
+        :root {
+            --body-background-color: #fff;
+            --primary-color: #001857;
+            --secondary-color: #ffffff;
+            --accent-color: #101577;
+            --shadow-color: #ffffff;
+            --hover-shadow-color: #0007ff80;
+            --card-shadow-color: #0008ff36;
+            --gradient-light: rgba(255, 255, 255, 0.45);
+            --gradient-dark: rgba(255, 255, 255, 0.09);
+            --footer-text-color: #fff;
+        }
+
         /* Setting global style */
         * {
             margin: 0;
@@ -20,7 +34,7 @@
             font-size: 16px;
             line-height: 1.5;
             font-family: "Roboto", sans-serif;
-            color: #101577;
+            color: var(--primary-color);
         }
 
         html {
@@ -32,28 +46,30 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            background-color: #001857;
+            background-color: var(--body-background-color);
         }
 
         h1 {
             font-size: 2.5rem;
             font-weight: 700;
-            color: #001857;
+            color: var(--primary-color);
             margin-bottom: 1rem;
         }
 
         h2 {
             font-size: 2rem;
             font-weight: 600;
-            color: #001857;
+            color: var(--primary-color);
             margin-bottom: 1rem;
         }
-    </style>
-    <style>
+
         /* header and navbar styles */
         header {
-            background-color: #001857;
-            box-shadow: 0 0 0.5rem 0 #ffffff;
+            background-color: var(--primary-color);
+            box-shadow: 0 0 0.5rem 0 var(--shadow-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         .navbar {
@@ -74,7 +90,7 @@
         }
 
         .menu-toggle .bar {
-            background-color: #fff;
+            background-color: var(--secondary-color);
             height: .25rem;
             width: 2rem;
             margin: .25rem 0;
@@ -95,14 +111,13 @@
             font-weight: bold;
             text-align: center;
             text-decoration: none;
-            color: #fff;
+            color: var(--secondary-color);
             padding: 0.5rem;
-            /* transition: background-color 0.3s; */
         }
 
         .nav-list a:hover {
-            background-color: #fff;
-            color: #001857;
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
         }
 
         @media (max-width: 768px) {
@@ -112,7 +127,7 @@
 
             .nav-list {
                 display: none;
-                background-color: #001857;
+                background-color: var(--primary-color);
                 flex-direction: column;
                 position: absolute;
                 top: 6rem;
@@ -120,7 +135,7 @@
                 width: 13rem;
                 padding: 1rem;
                 border-radius: 1rem;
-                box-shadow: 0 0.5rem 1rem 0 #ece9fd;
+                box-shadow: 0 0.5rem 1rem 0 var(--shadow-color);
             }
 
             .nav-list.active {
@@ -129,8 +144,8 @@
 
             .nav-list a:hover {
                 border-radius: 0.5rem;
-                background-color: #fff;
-                color: #001857;
+                background-color: var(--secondary-color);
+                color: var(--primary-color);
             }
         }
 
@@ -145,13 +160,10 @@
 
         .panel {
             border-radius: 1rem;
-            /* Cover the entire area */
             background-size: cover;
-            /* Center the image */
             background-position: center;
-            /* Prevent image repetition */
             background-repeat: no-repeat;
-            box-shadow: 0 0.5rem 0.5rem -6px #ffffff;
+            box-shadow: 0 0.5rem 0.5rem -6px var(--shadow-color);
         }
 
         #hero {
@@ -162,13 +174,13 @@
             align-items: center;
             text-align: center;
             background-image:
-                linear-gradient(rgba(255, 255, 255, 0.45),
-                    rgba(255, 255, 255, 0.09)),
+                linear-gradient(var(--gradient-light),
+                    var(--gradient-dark)),
                 url('images/inUse/hero.jpg');
 
             h1,
             h2 {
-                color: white;
+                color: var(--secondary-color);
             }
 
             h1 {
@@ -191,14 +203,13 @@
         #applications {
             min-height: 80vh;
             display: flex;
-            grid-template-columns: auto auto auto;
             align-items: flex-end;
             text-align: center;
-            grid-gap: 1rem;
+            gap: 1rem;
             padding: 1rem;
             background-image:
-                linear-gradient(rgba(255, 255, 255, 0.1),
-                    rgba(255, 255, 255, 0.4)),
+                linear-gradient(var(--gradient-light),
+                    var(--gradient-dark)),
                 url('images/inUse/applications.jpg');
         }
 
@@ -210,8 +221,8 @@
             gap: 1rem;
             padding: 1rem;
             background-image:
-                linear-gradient(rgba(255, 255, 255, 0),
-                    rgba(255, 255, 255, 0.4)),
+                linear-gradient(var(--gradient-light),
+                    var(--gradient-dark)),
                 url('images/inUse/services.jpg');
         }
 
@@ -223,23 +234,14 @@
             gap: 1rem;
             padding: 1rem;
             background-image:
-                linear-gradient(rgba(255, 255, 255, 0.1),
-                    rgba(255, 255, 255, 0.4)),
+                linear-gradient(var(--gradient-light),
+                    var(--gradient-dark)),
                 url('images/inUse/about.jpg');
         }
 
         @media (max-width: 768px) {
-            #applications {
-                flex-direction: column;
-                align-items: center;
-                gap: 1rem;
-            }
-
-            #services {
-                flex-direction: column;
-                align-items: center;
-                gap: 1rem;
-            }
+            #applications,
+            #services,
             #about {
                 flex-direction: column;
                 align-items: center;
@@ -248,11 +250,11 @@
         }
 
         .card {
-            background-color: #ffffff9c;
+            background-color: var(--secondary-color);
             border-radius: 1rem;
             padding: 1rem;
             flex: 1;
-            box-shadow: inset 0 0 1rem 0rem #0008ff36;
+            box-shadow: inset 0 0 1rem 0rem var(--card-shadow-color);
 
             img {
                 border-radius: 0.5rem 0.5rem 0 0;
@@ -260,14 +262,14 @@
         }
 
         .card:hover {
-            box-shadow: inset 0 0 1rem 0rem #0007ff80;
+            box-shadow: inset 0 0 1rem 0rem var(--hover-shadow-color);
         }
 
         section {
             border-radius: 1rem;
-            box-shadow: 0 0 1rem 0 #0101fb;
+            box-shadow: 0 0 1rem 0 var(--primary-color);
             padding: 3rem;
-            background-color: white;
+            background-color: var(--secondary-color);
         }
 
         @media (max-width: 768px) {
@@ -282,25 +284,23 @@
         }
 
         footer {
-            background-color: #001857;
-            color: #fff;
+            background-color: var(--primary-color);
+            color: var(--footer-text-color);
             text-align: center;
             padding: 1rem 2rem;
             display: flex;
             flex-direction: column;
-            box-shadow: 0 0 0.5rem 0 #ffffff;
-            /* position:relative;
-            bottom: 0;
-            width: 100%; */
+            box-shadow: 0 0 0.5rem 0 var(--shadow-color);
         }
 
         footer p {
-            color: white;
+            color: var(--footer-text-color);
         }
 
         .footer-content {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
+            gap: 2rem;
             align-items: center;
         }
 
@@ -321,7 +321,7 @@
         }
 
         .footer-content a span {
-            color: #fff;
+            color: var(--footer-text-color);
         }
 
         .social-icons,
@@ -466,7 +466,7 @@
     <footer>
         <div class="footer-content">
             <div class="social-icons">
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <!-- <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                     <img src="icons/facebook.png" alt="Facebook" class="social-icon">
                 </a>
                 <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
@@ -474,11 +474,11 @@
                 </a>
                 <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                     <img src="icons/instagram.png" alt="Instagram" class="social-icon">
-                </a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                </a> -->
+                <a href="https://www.linkedin.com/company/rs2tek" target="lin" rel="noopener noreferrer" aria-label="LinkedIn">
                     <img src="icons/linkedin.png" alt="LinkedIn" class="social-icon">
                 </a>
-                <a href="https://www.youtube.com/@RS2Tek" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                <a href="https://www.youtube.com/@RS2Tek" target="yt" rel="noopener noreferrer" aria-label="YouTube">
                     <img src="icons/youtube.png" alt="YouTube" class="social-icon">
                 </a>
             </div>
@@ -489,7 +489,7 @@
                 </a>
             </div>
         </div>
-        <p>&copy; 2024 RS2 Teknologies. All rights reserved.</p>
+        <p>Copyright &copy; 2024 RS2 Teknologies. All rights reserved.</p>
     </footer>
 </body>
 
